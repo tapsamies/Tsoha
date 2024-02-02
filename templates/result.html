@@ -1,10 +1,9 @@
-Valitsit pizzan {{pizza}}
-<p>
-Seuraavat lisät:
-<ul>
-    {% for extra in extras %}
-    <li> {{ extra }}
-      {% endfor %}</li>
-</ul>
-Erikoistoiveet: <br>
-    {{ message }}</p>
+{{ topic }}
+<hr>
+  <ul>
+  {% for choice in choices %}
+  <li> {{ choice.choice }}: {{choice.count }} kpl</li>
+  {% endfor %}
+  </ul>
+<hr>
+  <a href="/">Takaisin</a>

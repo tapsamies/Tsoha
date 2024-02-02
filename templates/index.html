@@ -1,7 +1,9 @@
-Viestien määrä: {{ count }}
+<a href="/new">Uusi kysely</a>
 <hr>
-  {% for message in messages %}
-  {{ message.content}}
+  {% for poll in polls %}
+  Aihe: {{ poll.topic }} <br>
+  Luotu: {{ poll.created_at.strftime("%Y-%m-%d %H:%M:%S") }} <br>
+<a href="/poll/{{ poll.id }}">Mene kyselyyn</a> |
+<a href="/result/{{ poll.id }}">Näytä tulokset</a> <br>
   <hr>
   {% endfor %}
-  <a href="/new">Lähetä viesti</a>
