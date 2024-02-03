@@ -1,0 +1,8 @@
+Keskustelualue, viestien määrä {{ count }}
+<hr>
+  {% for message in messages %}
+  {{ message.content }}
+  <hr>
+  {% endfor %}
+  <a href="/new">Lähetä viesti</a>
+<a href="/logout">Kirjaudu ulos</a>

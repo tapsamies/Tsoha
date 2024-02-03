@@ -43,3 +43,21 @@ def login():
 def logout():
     del session["username"]
     return redirect("/")
+
+@app.route("/new")
+def new():
+    return render_template("new.html")
+
+@app.route("/send", methods=["POST"])
+def send():
+    content = request.form["content"]
+    sql = text("INSERT INTO messages (content) VALUES (:content)")
+    db.session.execute(sql, {"content":content})
+    db.session.commit()
+    return redirect("/board")
+
+@app.route("/board")
+def board():
+    result = db.session.execute(text("SELECT content FROM messages"))
+    messages = result.fetchall()
+    return render_template("board.html", count=len(messages),messages=messages)

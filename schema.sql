@@ -1,17 +1,35 @@
-CREATE TABLE polls(
+CREATE TABLE admins(
 id SERIAL PRIMARY KEY,
-  topic TEXT,
+  adminname TEXT UNIQUE,
+  password TEXT,
   created_at TIMESTAMP
 );
 
-CREATE TABLE choices (
+CREATE TABLE users(
 id SERIAL PRIMARY KEY,
-  poll_id INTEGER REFERENCES polls,
-  choice TEXT
+  username TEXT UNIQUE,
+  password TEXT,
+  created_at TIMESTAMP
 );
 
-CREATE TABLE answers (
+CREATE TABLE categories (
 id SERIAL PRIMARY KEY,
-  choice_id INTEGER REFERENCES choices,
-  sent_at TIMESTAMP
+  name TEXT UNIQUE,
+  public BOOLEAN
+);
+
+CREATE TABLE threads (
+id SERIAL PRIMARY KEY,
+  topic TEXT UNIQUE,
+  sent_at TIMESTAMP,
+  user_id INTEGER REFERENCES users,
+  locked BOOLEAN
+);
+
+CREATE TABLE messages(
+id SERIAL PRIMARY KEY,
+  message_id INTEGER REFERENCES threads,
+  content TEXT,
+  sent_at TIMESTAMP,
+  user_id INTEGER REFERENCES users
 );
