@@ -56,6 +56,15 @@ def send():
     db.session.commit()
     return redirect("/board")
 
+@app.route("/result", methods=["GET"])
+def result():
+    query = request.args["query"]
+    sql = text("SELECT id, content FROM messages WHERE content LIKE :query")
+    result = db.session.execute(sql, {"query":"%"+query+"%"})
+    messages = result.fetchall()
+    return render_template("result.html")
+
+
 @app.route("/board")
 def board():
     result = db.session.execute(text("SELECT content FROM messages"))

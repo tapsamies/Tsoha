@@ -1,3 +1,7 @@
+CREATE TABLE visitors(
+id SERIAL PRIMARY KEY,
+  time TIMESTAMP
+);
 CREATE TABLE admins(
 id SERIAL PRIMARY KEY,
   adminname TEXT UNIQUE,
