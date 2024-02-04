@@ -1,8 +1,17 @@
-{% if session.user_id %}
+{% if session.admin_true %}
+<p>Tervetuloa ylläpito!</p>
+<a href="/users">Käyttäjien hallinta</a>
+<br>
+<a href="/logout">Kirjaudu ulos</a>
+<a href="/new">Uusi viesti</a>
+<a href="/board">Yleinen keskustelualue</a>
+<a href="/boards">keskustelualueet</a>
+{% elif session.user_id %}
 <p>Olet kirjautunut sisään</p>
 <a href="/logout">Kirjaudu ulos</a>
 <a href="/new">Uusi viesti</a>
-<a href="/board">Keskustelualueet</a>
+<a href="/board">Yleinen keskustelualue</a>
+<a href="/boards">keskustelualueet</a>
 {% else %}
 <a href="/login">Kirjaudu sisään</a> <br>
 <a href="/signup">Tai rekisteröi uusi käyttäjä</a>

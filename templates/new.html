@@ -3,4 +3,15 @@
   <textarea name ="content" rows="4" cols="40"></textarea>
   <br>
     <input type="submit" value="Lähetä">
+    <br>
 </form>
+{% if session.admin_true %}
+<form action="/create_category" method="POST">
+  Aihelueen nimi: <br>
+    <textarea name ="name" rows="4" cols="40" public="bool"></textarea>
+  <br>
+    Julkinen: <input type="checkbox" name="public" value="TRUE">
+  <br>
+  <input type="submit" value="Luo aihealue">  
+</form>
+{% endif %}

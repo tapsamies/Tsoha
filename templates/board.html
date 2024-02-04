@@ -1,13 +1,11 @@
-Keskustelualue {{ name }} , viestien määrä {{ count }}
+Keskustelualue, viestien määrä {{ count }}
 <hr>
   {% for message in messages %}
-  <i>Viesti:</i> {{ message[0] }}
-  <p>
-  <i>Lähettäjä:</i> {{ message[1] }}
-  <p>
-  <i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
-  <hr>
-  <hr>
+  <pre><i>Lähettäjä: {{ message[1] }}                          Aika: {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}</i></pre>
+ <hr>
+  <p> {{ message[0] }}
+  </p>
+  <hr><hr>
   {% endfor %}
   <a href="/new">Lähetä viesti</a>
 <a href="/logout">Kirjaudu ulos</a>

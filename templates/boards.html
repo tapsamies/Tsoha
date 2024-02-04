@@ -1,0 +1,7 @@
+Keskustelualueiden määrä: {{ count }}
+<hr>
+  {% for board in boards %}
+  Alue: {{ board.name }}
+<a href="/board/{{ board.id }}">Mene keskustelualueelle</a>
+<br>
+{% endfor %}
