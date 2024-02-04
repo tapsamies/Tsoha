@@ -18,6 +18,7 @@ Tämän projektin tavoitteena on luoda nimensä mukaisesti keskustelusovellus, j
 
 ### Sovelluksen käyttö
 - Sovellus on käytettävissä [fly.io:n puolella](https://tsoha-keskustelusovellus.fly.dev/), mutta voit ajaa sitä myös paikallisesti.
+- Ylläpidon toiminnallisuutta voi testata tunnuksella "admin", jonka salasana on sama kuin käyttäjätunnus. 
 
 ### Paikallinen käyttö
 - Käyttöä varten PostgreSQL tulee olla asennettuna, [linkki asennussivulle](https://www.postgresql.org/download/)
