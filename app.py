@@ -113,4 +113,4 @@ def boards():
 def users():
     result = db.session.execute(text("SELECT id, admin FROM users"))
     users = result.fetchall()
-    return render_template("userlist.html", count=len(users),users=users)
+    return render_template("user_list.html", count=len(users),users=users)

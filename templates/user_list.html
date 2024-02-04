@@ -1,0 +1,10 @@
+{% if session.admin_true %}
+<p>Käyttäjät</p>
+<hr>
+{% for user in users %}
+  {{ user.id }} {{ user.admin }}
+  <hr>
+  {% endfor %}
+{% endif %}
+  <a href="/">Takaisin etusivulle</a>
+
