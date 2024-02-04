@@ -17,7 +17,9 @@ Tämän projektin tavoitteena on luoda nimensä mukaisesti keskustelusovellus, j
 - Ylläpitäjä voi tehdä rajattuja alueita ja määrittää pääsyoikeuksia käyttäjille
 
 ### Sovelluksen käyttö
-- Sovellus ei ole vielä käytettävissä fly.io:n puolella, vaan se tulee ajaa paikallisesti testaamista varten
+- Sovellus on käytettävissä [fly.io:n puolella](https://tsoha-keskustelusovellus.fly.dev/), mutta voit ajaa sitä myös paikallisesti.
+
+### Paikallinen käyttö
 - Käyttöä varten PostgreSQL tulee olla asennettuna, [linkki asennussivulle](https://www.postgresql.org/download/)
 - Suorita seuraavat komennot sovelluksen käyttämistä varten kloonattuasi repon omalle (linux) tietokoneellesi:
 - python3 -m venv venv
