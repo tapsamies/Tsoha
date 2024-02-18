@@ -1,3 +1,4 @@
+{% if session.user_id %}
 <form action="/send" method="POST">
   Viesti: <br>
   <textarea name ="content" rows="4" cols="40"></textarea>
@@ -5,6 +6,9 @@
     <input type="submit" value="Lähetä">
     <br>
 </form>
+{% else %}
+<p>Et ole kirjautunut</p>
+{% endif %}
 {% if session.admin_true %}
 <form action="/create_category" method="POST">
   Aihelueen nimi: <br>
@@ -15,3 +19,4 @@
   <input type="submit" value="Luo aihealue">  
 </form>
 {% endif %}
+
